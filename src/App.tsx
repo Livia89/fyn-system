@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useState, useEffect } from "react";
+import * as C from "./App.styles";
+import { Item } from "./types/Item";
+import { Category } from "./types/Category";
+import { Items } from "./data/Items";
+import { Categories } from "./data/Categories";
+import { getCurrentMonth } from "./helpers/DateFilter";
 
-function App() {
+const App = () => {
+  const [list, setList] = useState(Items);
+  const [filteredList, setFilteredList] = useState<Item[]>([]);
+  const [currencyMonth, setCurrencyMonth] = useState(getCurrentMonth());
+
+  useEffect(() => {}, [list, currencyMonth]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <C.Container>
+      <C.Header>
+        <C.MainTitle>Crypto FiN </C.MainTitle>
+      </C.Header>
+      <C.Body>
+        {/* Information area  */}
+        {/* insert area  */}
+        {/* List information area  */}
+      </C.Body>
+    </C.Container>
   );
-}
+};
 
 export default App;
