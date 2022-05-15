@@ -18,6 +18,9 @@ function App(): JSX.Element {
     setFilteredList(filterListByMonth(list, currencyMonth));
   }, [list, currencyMonth]);
 
+  const handleMonthChange = (newMonth: string) => {
+    setCurrencyMonth(newMonth);
+  };
   return (
     <C.Container>
       <C.Header>
@@ -25,7 +28,10 @@ function App(): JSX.Element {
       </C.Header>
       <C.Body>
         {/* Information area  */}
-        <InfoArea currencyMonth={currencyMonth} />
+        <InfoArea
+          onMonthChange={handleMonthChange}
+          currencyMonth={currencyMonth}
+        />
         {/* insert area  */}
         {/* List information area  */}
         <TableArea list={filteredList} />

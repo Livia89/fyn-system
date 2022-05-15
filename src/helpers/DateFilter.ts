@@ -16,3 +16,10 @@ export const formatDate = (date : Date) : string=> {
 }
 
 const addZeroToDate = (n: number) : string=> n < 10 ? `0${n}`: `${n}`;
+
+export const formaCurrentMonth = (currencyMonth:string) : string => {
+    let [year, month] = currencyMonth.split('-');
+    let months = ['January', 'February', 'March', 'April', 'May', 'June','July', 'August', 'September', 'October', 'November', 'December'];
+
+    return `${months[parseInt(month)-1]} - ${year}`;
+}
