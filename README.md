@@ -1,7 +1,10 @@
-# Getting Started with Create React App
+# System Fyn - Financial system management
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Developed in React and Typescript.
 
+---  
+### *Don't forget to run npm install to install all dependencies before running this project*
+---
 ## Available Scripts
 
 In the project directory, you can run:
