@@ -8,6 +8,7 @@ import { Categories } from "./data/Categories";
 import { getCurrentMonth, filterListByMonth } from "./helpers/DateFilter";
 import { TableArea } from "./components/TableArea";
 import { InfoArea } from "./components/InfoArea";
+import { InsertedArea } from "./components/InsertedArea";
 
 function App(): JSX.Element {
   const [list, setList] = useState(Items);
@@ -36,6 +37,13 @@ function App(): JSX.Element {
   const handleMonthChange = (newMonth: string) => {
     setCurrencyMonth(newMonth);
   };
+
+  const onHandleAddItem = (item: Item) => {
+    let newList = [...list];
+    newList.push(item);
+    setList(newList);
+  };
+
   return (
     <C.Container>
       <C.Header>
@@ -50,6 +58,7 @@ function App(): JSX.Element {
           currencyMonth={currencyMonth}
         />
         {/* insert area  */}
+        <InsertedArea onAdd={onHandleAddItem} />
         {/* List information area  */}
         <TableArea list={filteredList} />
       </C.Body>

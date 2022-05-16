@@ -10,9 +10,9 @@ export const Title = styled.div`
     color: #888;
     margin-bottom: 5px;
 `;
-export const Info = styled.div`
+export const Info = styled.div<{ color?: string }>`
     flex: 1;
     text-align: center;
     font-weight: bold;
-    color: #000;
+    color: ${props => props.color ?? `#000`};
 `;

@@ -40,7 +40,11 @@ export const InfoArea = ({
       <C.ResumeArea>
         <ResumeItem title="Income" value={income} />
         <ResumeItem title="Expense" value={expense} />
-        <ResumeItem title="Balance" value={income - expense} />
+        <ResumeItem
+          color={income - expense < 0 ? "red" : "green"}
+          title="Balance"
+          value={income - expense}
+        />
       </C.ResumeArea>
     </C.Container>
   );
