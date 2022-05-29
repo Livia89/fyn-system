@@ -1,6 +1,6 @@
 # System Fyn - Financial system management
 
-Developed in React and Typescript.
+Developed in React and TypeScript.
 
 ---  
 ### *Don't forget to run npm install to install all dependencies before running this project*
